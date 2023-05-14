@@ -36,7 +36,6 @@ func (o *Urlscan) Fetch(domain string, results chan<- string) {
 	const url string = "https://urlscan.io/api/v1/search/"
 	params := map[string]string{
 		"q":    "domain:" + domain,
-		"sort": "date:desc",
 		"size": "1000",
 	}
 	res, _ := requests.Get(url, params, nil)
